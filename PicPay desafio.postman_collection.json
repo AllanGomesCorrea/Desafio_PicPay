@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "c3c952b8-e7e8-4458-a049-b88a9d67d7f8",
+		"name": "PicPay desafio",
+		"description": "Desafio PicPay simplificado para transferência de recursos contendo dois tipos de usuários.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30335817"
+	},
+	"item": [
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Consulta os usuários disponíveis."
+			},
+			"response": []
+		},
+		{
+			"name": "User 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"user_type\": \"COMUM\",\n        \"name\": \"Joao\",\n        \"registration\": \"12312312360\",\n        \"balance\": \"0.00\",\n        \"email\": \"joaoteste@gmail.com\",\n        \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Cadastra um primeiro usuário sem saldo para testes."
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 same registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"user_type\": \"COMUM\",\n        \"name\": \"Jose\",\n        \"registration\": \"12312312360\",\n        \"balance\": \"0.00\",\n        \"email\": \"jteste@gmail.com\",\n        \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Tentativa de cadastro com mesmo registro."
+			},
+			"response": []
+		},
+		{
+			"name": "User 1 same email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"user_type\": \"COMUM\",\n        \"name\": \"Joe\",\n        \"registration\": \"333333\",\n        \"balance\": \"0.00\",\n        \"email\": \"joaoteste@gmail.com\",\n        \"password\": \"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Tentativa de cadastro com mesmo email."
+			},
+			"response": []
+		},
+		{
+			"name": "User 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"user_type\": \"COMUM\",\n        \"name\": \"Maria\",\n        \"registration\": \"12345612354\",\n        \"balance\": \"775.00\",\n        \"email\": \"mariateste@gmail.com\",\n        \"password\": \"12312313\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Cadastro de um segundo usuário."
+			},
+			"response": []
+		},
+		{
+			"name": "User 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_type\": \"LOJISTA\",\n    \"name\": \"Lojas Bin\",\n    \"registration\": \"555333444699\",\n    \"balance\": \"10000.00\",\n    \"email\": \"lojasbin@gmail.com\",\n    \"password\": \"lojasbin\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					]
+				},
+				"description": "Cadastro de um terceiro usuário, porém do tipo lojista."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/transactions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						""
+					]
+				},
+				"description": "Consulta as transações realizadas."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction 1 to 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": \"1.00\",\n    \"payer\": 1,\n    \"payee\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/transactions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						""
+					]
+				},
+				"description": "Transação do primeiro usuário sem saldo para um segundo."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction 2 to 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": \"1.00\",\n    \"payer\": 2,\n    \"payee\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/transactions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						""
+					]
+				},
+				"description": "Transação do segundo usuário para o primeiro."
+			},
+			"response": []
+		},
+		{
+			"name": "Transaction user 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": \"1.00\",\n    \"payer\": 3,\n    \"payee\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/transactions/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"transactions",
+						""
+					]
+				},
+				"description": "Não é possível realizar transações do tipo lojista."
+			},
+			"response": []
+		}
+	]
+}
